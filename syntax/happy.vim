@@ -10,7 +10,7 @@ syn region happyHsSnippet matchgroup=happyDelim start="{%\?" end="}" contains=@H
 syn region happyHsBraces matchgroup=hsDelimiter start="{\ze[^-]" end="}" contains=@Haskell,happyHsBrace contained
 syn region happyHsPragma start="{-#" end="#-}" contained
 syn region happyMComment start="{-\ze[^#]" end="-}"
-syn region happyString start="\k\@<!'" end="'"
+syn region happyString start="\k\@<!\z(['\"]\)" end="\z1" skip="\\\z1"
 syn match happyNumber "\<\d\+\>"
 syn match happyPrimeErr "\k\zs'\+"
 syn match happySplice "\\\@<!\$\([\$>]\|\d\+\)" contained
